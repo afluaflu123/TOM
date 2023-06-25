@@ -5,26 +5,16 @@ from info import BOT_TOKEN, API_ID, API_HASH
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 import asyncio
 
-
-
-
 Bot = Client(
     "NoLink-BOT",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"]
-)
-
-
-
-        
-
+)      
 
 @Client.on_message(filters.regex("http") & filters.regex("www") | filters.regex("@") | filters.regex("https") | filters.regex("t.me") & filters.group)
-async def nolink(bot,message):
-    
-	try:
-                
+async def nolink(bot,message):  
+	try:                
                 buttons = [[
                     InlineKeyboardButton('sᴜʀᴘʀɪsᴇ', url='{content}')
                 ]]
@@ -33,10 +23,7 @@ async def nolink(bot,message):
                         
                 
                 hmm = await message.delete()
-                return
-                
-
-
+                return              
 	except:
 		return
         
